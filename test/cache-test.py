@@ -4,9 +4,11 @@ print("Testing yt-dlp")
 import subprocess
 from yt_dlp import YoutubeDL
 
-subprocess.call("""
+result = subprocess.call("""
 yt-dlp -f 'bestvideo[height<=720]+bestaudio' "https://www.youtube.com/watch?v=rDXubdQdJYs"
 """, shell=True)
+if result != 0:
+    raise RuntimeError(f"Command failed with return code {result}")
 
 print("Done")
 
@@ -39,13 +41,18 @@ print("Testing scene detection")
 
 import subprocess
 
-subprocess.call("""
-scenedetect -i "rDXubdQdJYs.webm" \
+video_path = Path(__file__).parent.joinpath("rDXubdQdJYs.webm")
+
+result = subprocess.call(f"""
+scenedetect -i "{video_path}" \
     detect-content \
     save-images --output debate --width 300 --num-images 5 \
     export-html --image-width 300 \
     list-scenes --skip-cuts
 """, shell=True)
+if result != 0:
+    raise RuntimeError(f"Command failed with return code {result}")
+
 print("Done")
 
 ## Transformers test
@@ -74,7 +81,7 @@ from inference import get_model
 
 model = get_model("yolov10n-640")
 
-video_path = "istockphoto-534232220-640_adpp_is.mp4"
+video_path = Path(__file__).parent.joinpath("istockphoto-534232220-640_adpp_is.mp4")
 frame_generator = sv.get_video_frames_generator(video_path)
 
 box_annotator = sv.BoxAnnotator()
@@ -120,3 +127,5 @@ for frame in frame_generator:
     break
 
 print("Done")
+
+print("SUCCESS!!!")
