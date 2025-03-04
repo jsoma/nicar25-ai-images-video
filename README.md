@@ -1,12 +1,20 @@
-## Installation
+# Analyzing images and videos with AI
 
-First, you'll need to install **ffmpeg** for video processing.
+*NICAR 2025, Minneapolis*
+
+Jonathan Soma, Knight Chair in Data Journalism at Columbia Journalism School
+
+[jonathan.soma@gmail.com](mailto:jonathan.soma@gmail.com) / [Twitter](https://x.com/dangerscarf) / [Bluesky](https://bsky.app/profile/dangerscarf.bsky.social) / [jonathansoma.com](https://jonathansoma.com)
+
+## Setup and installation
+
+We're doing this on macOS, so I'm telling you setup instructions for macOS! First, you'll need to install [Homebrew](https://brew.sh/), then **ffmpeg** for video processing.
 
 ```
 brew install ffmpeg
 ```
 
-Then you'll need to create and activate a virtual environment, then install the requirements.
+Then you'll need to create and activate a **virtual environment** and install the requirements.
 
 ```
 python -m venv env
