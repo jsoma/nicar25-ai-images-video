@@ -26,7 +26,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 batch_size = 16 if device == "cuda" else 8
 compute_type = "float16" if device == "cuda" else "float32" 
 
-model = whisperx.load_model("turbo", device, compute_type=compute_type)
+model = whisperx.load_model("tiny.en", device, compute_type=compute_type)
 
 audio = whisperx.load_audio(audio_path.absolute())
 result = model.transcribe(audio, batch_size=batch_size)

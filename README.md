@@ -8,31 +8,18 @@ Jonathan Soma, Knight Chair in Data Journalism at Columbia Journalism School
 
 ## Setup and installation
 
-We're doing this on macOS, so I'm telling you setup instructions for macOS! First, you'll need to install [Homebrew](https://brew.sh/), then **ffmpeg** for video processing.
+I'm providing this just for setup on the NICAR computers right now. SORRY!!
 
 ```
 brew install ffmpeg
-```
-
-Then you'll need to create and activate a **virtual environment** and install the requirements.
-
-```
-python -m venv env
+brew install pyenv
+mkdir -p ~/Desktop/hands_on_classes/20250307-friday-analyzing-images-and-videos-with-ai
+cd ~/Desktop/hands_on_classes/20250307-friday-analyzing-images-and-videos-with-ai
+pyenv install "3.12"
+pyenv local "3.12"
+PYENV_VERSION=3.12 pyenv exec python -m venv env
 source env/bin/activate
 pip install -r requirements.txt
-```
-
-You should also run the following command to make this environment available in Jupyter notebook (you'll need to have installed Jupyter separately).
-
-```
-python -m ipykernel install --user --name="images-video-ai" --display-name="AI with images and video"
-```
-
-### Testing setup and caching materials
-
-The following command will confirm that the install worked, while also caching some of the (rather large) AI models we'll be using.
-
-```
-source env/bin/activate
-python test/cache-test.py
+python -m ipykernel install --user --name="ai-newsroom" --display-name="AI Newsroom"
+python test/test-cache.py
 ```
