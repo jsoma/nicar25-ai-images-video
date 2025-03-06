@@ -23,3 +23,5 @@ pip install -r requirements.txt
 python -m ipykernel install --user --name="ai-newsroom" --display-name="AI Newsroom"
 python test/test-cache.py
 ```
+
+Also, download [Msty](https://msty.app/) and then open it up and click 'setup local AI' (or 'continue' down at the bottom if there are any ollama models around).
