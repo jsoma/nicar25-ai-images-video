@@ -26,7 +26,7 @@ from pathlib import Path
 # batch_size = 16 if device == "cuda" else 8
 # compute_type = "float16" if device == "cuda" else "float32" 
 
-model = whisperx.load_model("tiny.en", "cpu")
+#model = whisperx.load_model("tiny.en", "cpu")
 
 # audio = whisperx.load_audio(audio_path.absolute())
 # result = model.transcribe(audio, batch_size=batch_size)
