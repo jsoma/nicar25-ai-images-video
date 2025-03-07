@@ -6,15 +6,13 @@ Jonathan Soma, Knight Chair in Data Journalism at Columbia Journalism School
 
 [jonathan.soma@gmail.com](mailto:jonathan.soma@gmail.com) / [Twitter](https://x.com/dangerscarf) / [Bluesky](https://bsky.app/profile/dangerscarf.bsky.social) / [jonathansoma.com](https://jonathansoma.com)
 
-## Using this on the cloud
-
-[Visit Google Colab here](https://colab.research.google.com/github/jsoma/nicar25-ai-images-video)
-
 ## Setup and installation
 
-### Normal human setup
+Avoid setup and just [use these notebooks on Google Colab](http://colab.research.google.com/github/jsoma/nicar25-ai-images-video/).
 
-Various Pythons may or may not work for this – I use 3.10 or 3.11, not exactly sure about more recent ones.
+### Your own machine
+
+Various Pythons may or may not work for this – I use 3.10 or 3.11, not exactly sure about more recent ones. I think all of the `pip install` commands are in the Jupyter notebooks themselves, so you shouldn't need anything on that front. Maybe `brew install ffmpeg`, depending on what you're up to.
 
 ### NICAR setup
 I'm providing this just for setup on the NICAR computers right now. SORRY!!
