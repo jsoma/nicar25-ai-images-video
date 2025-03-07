@@ -20,18 +20,18 @@ import whisperx
 import torch
 from pathlib import Path
 
-audio_path = Path(__file__).parent.joinpath("audio.m4a")
+# audio_path = Path(__file__).parent.joinpath("audio.m4a")
 
-device = "cuda" if torch.cuda.is_available() else "cpu"
-batch_size = 16 if device == "cuda" else 8
-compute_type = "float16" if device == "cuda" else "float32" 
+# device = "cuda" if torch.cuda.is_available() else "cpu"
+# batch_size = 16 if device == "cuda" else 8
+# compute_type = "float16" if device == "cuda" else "float32" 
 
-model = whisperx.load_model("tiny.en", device, compute_type=compute_type)
+model = whisperx.load_model("tiny.en", "cpu"/)
 
-audio = whisperx.load_audio(audio_path.absolute())
-result = model.transcribe(audio, batch_size=batch_size)
-model_a, metadata = whisperx.load_align_model(language_code=result["language"], device=device)
-result = whisperx.align(result["segments"], model_a, metadata, audio, device, return_char_alignments=False)
+# audio = whisperx.load_audio(audio_path.absolute())
+# result = model.transcribe(audio, batch_size=batch_size)
+# model_a, metadata = whisperx.load_align_model(language_code=result["language"], device=device)
+# result = whisperx.align(result["segments"], model_a, metadata, audio, device, return_char_alignments=False)
 
 print("Done")
 
